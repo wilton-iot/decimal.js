@@ -1,6 +1,7 @@
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // Tests immutability of operand[s] for all applicable methods.
 // Also tests each Decimal.prototype method against its equivalent Decimal method where applicable.
-if (typeof T === 'undefined') require('../setup');
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('immutability', function () {
 
@@ -555,3 +556,5 @@ Decimal.config();
 Decimal.noConflict();
 Decimal.random();
 */
+
+require = requireOrig;});

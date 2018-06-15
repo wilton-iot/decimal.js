@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('dividedToIntegerBy', function () {
 
@@ -1016,3 +1017,5 @@ T('dividedToIntegerBy', function () {
   t('-6162044682.46579949512756133331211291134216377880642', '70883.101619290546467', '-8.6932e+4');
   t('2.2858509075765580228170996569682255', '7.024E-8', '3.2543435e+7');
 });
+
+require = requireOrig;});

@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('cubeRoot', function () {
 
@@ -1012,3 +1013,5 @@ T('cubeRoot', function () {
   t('-274794195303195669383690179150393637278', 61, 0, '-6501334600143.956003508608845101493972662138482039189675231797');
   */
 });
+
+require = requireOrig;});

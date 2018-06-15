@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('valueOf', function () {
 
@@ -63,3 +64,5 @@ T('valueOf', function () {
   t('1e+0', '1');
 });
 
+
+require = requireOrig;});

@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('atan2', function () {
 
@@ -1054,3 +1055,5 @@ T('atan2', function () {
   t('811522222222222222222222222222222222222422222222222222222222222222282.422222222', '-5222222222416415910444444444444.729788169848249155', 35, 1, '1.5707963267948966192313216916397514');
   */
 });
+
+require = requireOrig;});

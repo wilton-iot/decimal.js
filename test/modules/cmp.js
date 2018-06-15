@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('comparedTo', function () {
 
@@ -1024,3 +1025,5 @@ T('comparedTo', function () {
   t('-9.29480350675e-6', '9.4830355594e+4', -1);
   t('-2.49267401e-19', '3.3296905e+4', -1);
 });
+
+require = requireOrig;});

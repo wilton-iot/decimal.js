@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('config', function () {
 
@@ -371,3 +372,5 @@ T('config', function () {
   // Decimal.set is an alias for Decimal.config
   T.assertEqual(Decimal.set, Decimal.config);
 });
+
+require = requireOrig;});

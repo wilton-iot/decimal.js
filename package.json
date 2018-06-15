@@ -32,5 +32,18 @@
     "test": "node ./test/test.js",
     "build": "uglifyjs decimal.js --source-map doc/decimal.js.map -c -m -o decimal.min.js --preamble \"/* decimal.js v10.0.1 https://github.com/MikeMcl/decimal.js/LICENCE */\""
   },
-  "types": "decimal.d.ts"
+  "types": "decimal.d.ts",
+  "wilton": {
+    "excludes": [
+      "doc",
+      "test",
+      "decimal.d.ts",
+      "decimal.global.d.ts",
+      "decimal.min.js",
+      "decimal.mjs"
+    ],
+    "preMinifiedFiles": [
+      "decimal.js"
+    ]
+  }
 }

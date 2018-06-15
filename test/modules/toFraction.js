@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toFraction', function () {
 
@@ -229,3 +230,5 @@ T('toFraction', function () {
   tx(function () {new Decimal('123.45').toFraction(Infinity)}, ".toFraction(Infinity)");
   tx(function () {new Decimal('123.45').toFraction('-Infinity')}, ".toFraction('-Infinity')");
 });
+
+require = requireOrig;});

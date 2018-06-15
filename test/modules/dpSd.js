@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('decimalPlaces and precision', function () {
 
@@ -68,3 +69,5 @@ T('decimalPlaces and precision', function () {
   tx(function () {new Decimal(1).sd('3')}, "new Decimal(1).sd('3')");
   tx(function () {new Decimal(1).sd({})}, "new Decimal(1).sd({})");
 });
+
+require = requireOrig;});

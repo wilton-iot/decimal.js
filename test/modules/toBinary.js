@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toBinary', function () {
 
@@ -357,3 +358,5 @@ T('toBinary', function () {
 
   t('0b1.001010101110101p-4', '0b1.001010101110101p-4', 16, 1);
 });
+
+require = requireOrig;});

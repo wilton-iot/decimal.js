@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toNearest', function () {
 
@@ -228,3 +229,5 @@ T('toNearest', function () {
   Decimal.rounding = 8;
   t('-500', '-450.001', 100);
 });
+
+require = requireOrig;});

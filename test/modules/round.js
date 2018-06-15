@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('round', function () {
 
@@ -521,3 +522,5 @@ T('round', function () {
   t('1.8171003585956362231021760046143097114054128693433487680606690918875530579038e+76', '1.81710035859563622310217600461430971140541286934334876806066909188755305790370439773413227239119191673971090333e+76', 2);
   t('3.71331955392433687189949e+23', '3.7133195539243368718994912855e+23', 6);
 });
+
+require = requireOrig;});

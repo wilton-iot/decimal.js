@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toHex', function () {
 
@@ -340,3 +341,5 @@ T('toHex', function () {
   t('0x1.5b23a8dd37fc2p-10', '0.001324231321', 14, 4);
   t('0x1.81016cc52538ap+9', '770.0111319', 14, 4);
 });
+
+require = requireOrig;});

@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toSignificantDigits', function () {
 
@@ -550,3 +551,5 @@ T('toSignificantDigits', function () {
   tx(function () {new Decimal('12.345').toSD(Infinity)}, ".toSD(Infinity)");
   tx(function () {new Decimal('12.345').toSD('-Infinity')}, ".toSD('-Infinity')");
 });
+
+require = requireOrig;});

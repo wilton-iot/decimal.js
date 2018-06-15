@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('pow', function () {
 
@@ -137,3 +138,5 @@ T('pow', function () {
   t('0.9999999999999999', '-1e+50', 'Infinity', 40, 1);
   t('0.9999999999999999999999999999999899999999999999994403269002375809806554775739676251993670310626872684', '-1.49181945463118148622657269735650603014891811120124843379694396257337810020127409048127397077199569e+271', 'Infinity', 100, 1);
 });
+
+require = requireOrig;});

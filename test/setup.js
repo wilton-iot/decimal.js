@@ -1,3 +1,4 @@
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 // Adds global: T
 
 T = (function () {
@@ -20,7 +21,7 @@ T = (function () {
       document.body.innerHTML += str.replace(/\n/g, '<br>').replace(/ /g, '&nbsp;');
     };
   } else {
-    Decimal = require('../decimal');
+    Decimal = require('decimaljs');
     write = process.stdout.write.bind(process.stdout);
   }
 
@@ -107,3 +108,5 @@ T = (function () {
 
   return T;
 })();
+
+require = requireOrig;});

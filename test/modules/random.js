@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('random', function () {
   var i, sd, maxDigits;
@@ -27,3 +28,5 @@ T('random', function () {
   tx(function () { Decimal.random(NaN) }, 'NaN');
   tx(function () { Decimal.random(null) }, 'null');
 });
+
+require = requireOrig;});

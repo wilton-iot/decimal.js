@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('absoluteValue', function () {
 
@@ -123,3 +124,5 @@ T('absoluteValue', function () {
   t('Infinity', '-1e+9000000000000001');
   t('5.5879983320336874473209567979e+287894365', '-5.5879983320336874473209567979e+287894365');
 });
+
+require = requireOrig;});

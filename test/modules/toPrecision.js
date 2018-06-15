@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toPrecision', function () {
 
@@ -565,3 +566,5 @@ T('toPrecision', function () {
   tx(function () {new Decimal(1.23).toPrecision(1, Infinity)}, ".toPrecision(1, Infinity)");
   tx(function () {new Decimal(1.23).toPrecision(1, '-Infinity')}, ".toPrecision(1, '-Infinity')");
 });
+
+require = requireOrig;});

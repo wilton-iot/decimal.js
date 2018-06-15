@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toOctal', function () {
 
@@ -323,3 +324,5 @@ T('toOctal', function () {
 
   t('0o1.777p-4', '0o1.777p-4', 4, 1);
 });
+
+require = requireOrig;});

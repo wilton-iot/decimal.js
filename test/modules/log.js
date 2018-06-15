@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('log', function () {
 
@@ -274,3 +275,5 @@ T('log', function () {
   t('17578.3501161869916711', 2, '14.101512046680555', 18, 3);
   t('5661.58', 2, '12.466989012642603919950322048', 29, 1);
 });
+
+require = requireOrig;});

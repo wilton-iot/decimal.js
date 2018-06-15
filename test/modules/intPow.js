@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('integer pow', function () {
 
@@ -602,3 +603,5 @@ T('integer pow', function () {
   If x<0 and x is finite and y is finite and y is not an integer, the result is NaN.
 
 */
+
+require = requireOrig;});

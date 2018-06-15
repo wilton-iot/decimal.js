@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('min and max', function () {
 
@@ -73,3 +74,5 @@ T('min and max', function () {
   t(-0, 1, [1, '-1e-9000000000000001', 1e-200]);
   t(-3, 3, [1, '2', 3, '-1', -2, '-3']);
 });
+
+require = requireOrig;});

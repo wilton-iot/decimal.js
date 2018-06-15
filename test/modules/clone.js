@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('clone', function () {
 
@@ -142,3 +143,5 @@ T('clone', function () {
   t(D3.rounding === 2);
 });
 
+
+require = requireOrig;});

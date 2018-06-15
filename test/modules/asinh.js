@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('asinh', function () {
 
@@ -1022,3 +1023,5 @@ T('asinh', function () {
   t('-0.00014646860007896', 75, 1, '-0.000146468599555260285150687195543516588439055126517399139386767315063352429473');
   */
 });
+
+require = requireOrig;});

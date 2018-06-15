@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('isFinite, isInteger, isNaN, isNegative, isZero, isDecimal', function () {
 
@@ -276,3 +277,5 @@ T('isFinite, isInteger, isNaN, isNegative, isZero, isDecimal', function () {
   t(!Decimal.isDecimal({isDecimal: true}));
   t(!Decimal.isDecimal(new Number(4)));
 });
+
+require = requireOrig;});

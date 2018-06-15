@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('tanh', function () {
 
@@ -120,3 +121,5 @@ T('tanh', function () {
   t('0.91999661041886666', 17, 6, '0.72589581132601256');
 });
 
+
+require = requireOrig;});

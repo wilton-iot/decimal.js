@@ -1,4 +1,5 @@
-if (typeof T === 'undefined') require('../setup');
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
+if (typeof T === 'undefined') require('decimaljs/test/setup');
 
 T('toFixed', function () {
 
@@ -567,3 +568,5 @@ T('toFixed', function () {
   t('-1.00000000000000000', '-1.000000000000000000005', 17);
   t('-1.00000000000000000001', '-1.000000000000000000005', 20);
 });
+
+require = requireOrig;});
