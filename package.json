@@ -40,10 +40,8 @@
       "decimal.d.ts",
       "decimal.global.d.ts",
       "decimal.min.js",
-      "decimal.mjs"
-    ],
-    "preMinifiedFiles": [
-      "decimal.js"
+      "decimal.mjs",
+      "test.js"
     ]
   }
 }
